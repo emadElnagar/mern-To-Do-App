@@ -1,0 +1,36 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "to do app created with mern stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emadElnagar/mern-To-Do-App.git"
+  },
+  "keywords": [
+    "mern",
+    "mern-stack",
+    "react",
+    "mongodb",
+    "mongoose",
+    "nodejs",
+    "express",
+    "to-do-app"
+  ],
+  "author": "Emad Elnagar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emadElnagar/mern-To-Do-App/issues"
+  },
+  "homepage": "https://github.com/emadElnagar/mern-To-Do-App#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
