@@ -8,6 +8,9 @@ const Task = (props) => {
       <Item>
         <Text>{task.title}</Text>
         <div>
+          <DoneButton>
+            <span className="material-icons">done</span>
+          </DoneButton>
           <UpdateButton>
             <span className="material-icons">edit</span>
           </UpdateButton>
@@ -25,17 +28,25 @@ const Item = styled.li `
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid #000;
-  padding: 10px 15px
+  padding: 10px 0;
+  align-items: center;
 `
 
 const Text = styled.span `
   font-size: 1.5rem;
 `
 
+const DoneButton = styled.button `
+  background: #F10086;
+  color: #fff;
+  font-size: 1rem;
+  padding: 5px 15px
+`
+
 const UpdateButton = styled.button `
   background: #00AFC1;
   color: #fff;
-  margin 5px;
+  margin: 0 5px;
   font-size: 1rem;
   padding: 5px 15px
 `
