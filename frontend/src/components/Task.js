@@ -6,7 +6,13 @@ const Task = (props) => {
   return (
     <Fragment>
       <Item>
-        <Text>{task.title}</Text>
+        <Text>
+          {
+            task.isDone
+            ? (<del>{task.title}</del>)
+            : (task.title)
+          }
+        </Text>
         <div>
           <DoneButton>
             <span className="material-icons">done</span>
@@ -37,14 +43,14 @@ const Text = styled.span `
 `
 
 const DoneButton = styled.button `
-  background: #F10086;
+  background: #FF0266;
   color: #fff;
   font-size: 1rem;
   padding: 5px 15px
 `
 
 const UpdateButton = styled.button `
-  background: #00AFC1;
+  background: #3722f6;
   color: #fff;
   margin: 0 5px;
   font-size: 1rem;

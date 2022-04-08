@@ -3,12 +3,7 @@ import styled from "styled-components";
 import Task from "./Task";
 
 const ToDoList = () => {
-  const Tasks = [
-    {_id: 1, title: "Task 1"},
-    {_id: 2, title: "Task 2"},
-    {_id: 3, title: "Task 3"},
-    {_id: 4, title: "Task 4"},
-  ]
+  const Tasks = []
   return (
     <div className="container">
       <List>

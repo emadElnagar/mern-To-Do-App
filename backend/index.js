@@ -5,9 +5,10 @@ import router from "./task/routes.js";
 
 const app = express();
 const hostName = 'localhost';
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({extended: true}));
 
 mongoose.connect('mongodb://localhost/todo', (err) => {
