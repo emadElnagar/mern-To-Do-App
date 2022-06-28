@@ -9,8 +9,8 @@ const Task = (props) => {
         <Text>
           {
             task.isDone
-            ? (<del>{task.title}</del>)
-            : (task.title)
+            ? (task.title)
+            : (<del>{task.title}</del>)
           }
         </Text>
         <div>
