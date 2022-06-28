@@ -15,13 +15,13 @@ const Task = (props) => {
         </Text>
         <div>
           <DoneButton>
-            <span className="material-icons">done</span>
+            <span title="Task Is Done" className="material-icons">done</span>
           </DoneButton>
           <UpdateButton>
-            <span className="material-icons">edit</span>
+            <span title="Update Task" className="material-icons">edit</span>
           </UpdateButton>
           <DeleteButton>
-            <span className="material-icons">delete</span>
+            <span title="Remove Task" className="material-icons">delete</span>
           </DeleteButton>
         </div>
       </Item>

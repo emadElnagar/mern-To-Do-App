@@ -12,7 +12,7 @@ const ToDoList = () => {
     }).catch((err) => {
       console.log(err);
     })
-  }, []);
+  }, [list]);
   return (
     <div className="container">
       <List>
