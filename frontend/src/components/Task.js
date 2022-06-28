@@ -5,6 +5,9 @@ import axios from "axios";
 
 const Task = (props) => {
   const { task } = props;
+  const taskDone = (id) => {
+    axios.put(`http://localhost:5000/api/task/done/${id}`)
+  }
   const handleDelete = (id) => {
     axios.delete(`http://localhost:5000/api/task/delete/${id}`);
   }
@@ -13,15 +16,26 @@ const Task = (props) => {
       <Item>
         <Text>
           {
-            task.isDone
-            ? (task.title)
-            : (<del>{task.title}</del>)
+            task.isDone === "true"
+            ? (<del>{task.title}</del>)
+            : (task.title)
           }
         </Text>
         <div>
-          <DoneButton>
-            <span title="Task Is Done" className="material-icons">done</span>
-          </DoneButton>
+        {
+            task.isDone === "true"
+            ? (
+                <DoneButton>
+                  <span title="Task Is Done" className="material-icons">close</span>
+                </DoneButton>
+              )
+            : (
+                <DoneButton onClick={() => taskDone(task._id)}>
+                  <span title="Task Is Done" className="material-icons">done</span>
+                </DoneButton>
+              )
+          }
+          
           <UpdateButton>
             <span title="Update Task" className="material-icons">edit</span>
           </UpdateButton>
