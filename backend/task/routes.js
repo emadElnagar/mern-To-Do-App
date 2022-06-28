@@ -42,6 +42,21 @@ router.put('/update/:id', (req, res) => {
   });
 });
 
+router.put('/reset/:id', (req, res) => {
+  const newTask = {
+    isDone: false
+  }
+  Task.updateOne({ _id: req.params.id }, { $set: newTask }).then(result => {
+    res.status(202).json({
+      message: "Task Done"
+    });
+  }).catch(error => {
+    res.status(401).json({
+      message: "Error" + error.message
+    });
+  });
+});
+
 router.put('/done/:id', (req, res) => {
   const newTask = {
     isDone: true

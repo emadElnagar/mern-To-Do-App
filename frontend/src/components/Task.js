@@ -5,6 +5,9 @@ import axios from "axios";
 
 const Task = (props) => {
   const { task } = props;
+  const resetTask = (id) => {
+    axios.put(`http://localhost:5000/api/task/reset/${id}`)
+  }
   const taskDone = (id) => {
     axios.put(`http://localhost:5000/api/task/done/${id}`)
   }
@@ -25,15 +28,14 @@ const Task = (props) => {
         {
             task.isDone === "true"
             ? (
-                <DoneButton>
-                  <span title="Task Is Done" className="material-icons">close</span>
+                <DoneButton onClick={() => resetTask(task._id)}>
+                  <span title="Reset Task" className="material-icons">close</span>
                 </DoneButton>
-              )
-            : (
+              ) : (
                 <DoneButton onClick={() => taskDone(task._id)}>
                   <span title="Task Is Done" className="material-icons">done</span>
                 </DoneButton>
-              )
+            )
           }
           
           <UpdateButton>
