@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { addTask } from '../api/task';
+import axios from 'axios';
 
 const TodoForm = () => {
-  const [task, setTask] = useState('');
+  const [title, setTitle] = useState('');
   const handleSubmit = async(e) => {
     e.preventDefault();
-    try {
-      const { result } = await addTask(task);
-      console.log(result);
-    } catch (error) {
-      if (error.response && error.response.status >= 400 && error.response.status < 500) {
-        alert(error);
-      } else {
-        console.log(error);
-      }
-    }
+    axios.post("http://localhost:5000/api/task", {
+      title: title
+    });
+    console.log(title);
   }
   return (
     <div className='container'>
       <Form method='post' onSubmit={handleSubmit}>
-        <Input id='title' name='title' onChange={(e) => setTask(e.target.value)} placeholder='Enter Your Task Here' />
+        <Input id='title' name='title' onChange={(e) => setTitle(e.target.value)} placeholder='Enter Your Task Here' />
         <Button type='submit'>
           <span className="material-icons">add</span>
         </Button>
