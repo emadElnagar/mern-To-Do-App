@@ -9,7 +9,7 @@ const TodoForm = () => {
     axios.post("http://localhost:5000/api/task", {
       title: title
     });
-    e.target.reset();
+    e.setState({title: ''});
   }
   return (
     <div className='container'>

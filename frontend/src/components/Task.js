@@ -1,8 +1,13 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
+import axios from "axios";
+
 
 const Task = (props) => {
   const { task } = props;
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:5000/api/task/delete/${id}`);
+  }
   return (
     <Fragment>
       <Item>
@@ -20,7 +25,7 @@ const Task = (props) => {
           <UpdateButton>
             <span title="Update Task" className="material-icons">edit</span>
           </UpdateButton>
-          <DeleteButton>
+          <DeleteButton onClick={() => handleDelete(task._id)}>
             <span title="Remove Task" className="material-icons">delete</span>
           </DeleteButton>
         </div>
