@@ -30,6 +30,10 @@ input:not(:placeholder-shown) {
   font-size: 1rem;
 }
 
+.d-none {
+  display: none !important;
+}
+
 /*========== EXTRA LARGE SCREEN ==========*/
 @media (min-width:1200px) {
   .container {
